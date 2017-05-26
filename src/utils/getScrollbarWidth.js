@@ -2,6 +2,8 @@ import css from 'dom-css';
 let scrollbarWidth = false;
 
 export default function getScrollbarWidth() {
+    // only use in electron
+    if (process.platform === 'darwin') return 15;
     if (scrollbarWidth !== false) return scrollbarWidth;
     /* istanbul ignore else */
     if (typeof document !== 'undefined') {
